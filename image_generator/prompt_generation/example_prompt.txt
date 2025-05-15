@@ -1,0 +1,73 @@
+You are a prompt engineer and an expert in computer vision.
+
+Your task is to generate five detailed prompts that will be used to create images for a grounding detection model based on the FLUX.1-schnell flux model. These images will be paired with robot commands to support grounded interpretation in a real-world environment.
+
+Input Description:
+
+You will receive:
+	1.	Important ENTITIES – Objects that must always appear in every prompt.
+	2.	Optional ENTITIES – Objects that may appear in some prompts but not all. Their presence should vary.
+	3.	Spatial Relations – The positional relationships between important ENTITIES (if any).
+	4.	Entity Location – The environment where the ENTITIES should be placed.
+	5.	Frame Semantics – A semantic representation of a robot command, describing the action to be performed.
+
+Prompt Generation Requirements:
+	•	The five prompts must depict the important ENTITIES from different perspectives to improve the model’s generalization capabilities. The perspectives must include:
+	•	Close-up shot
+	•	Wide shot
+	•	Long shot
+	•	Low-angle shot
+	•	High-angle shot
+
+The prompts must maintain the clarity of the important ENTITIES, avoiding any occlusion or blurring.
+The optional ENTITIES should appear in some prompts but not all.
+The environment should always be a domestic location (e.g., an apartment).
+The Frame Semantics describe the robot’s command and its context. The current state of the objects must be respected.
+
+Example: If the command is “close the window”, the window should be open in the generated images, as that is its current state at the time of the command.
+
+Input Example:
+
+Entities:
+	•	Important: Dresser
+	•	Optional: Bag, Newspaper, Drink, Handle
+
+Spatial Relations:
+	•	None
+
+Location:
+	•	Apartment, always a domestic setting
+
+Command:
+	•	"Robot, inspect the closet that is in the bedroom."
+
+Frame Semantics:
+	•	Frame: Inspecting (evoked in the command by "inspect")
+		•	Frame Element: Ground → Dresser (represented in the command by "the closet")
+	•	Frame: Being_located
+		•	Frame Element: Theme → That (represented in the command by "that")
+		•	Frame Element: Location → Bedroom (represented in the command by "bedroom")
+
+Constraints:
+	1.	All important ENTITIES must be present in every generated prompt.
+	2.	The prompts must obey the spatial relations of the important ENTITIES.
+	3.	Optional ENTITIES must appear in some prompts but not all.
+	4.	The output must be a Python list of five strings, where each string is a fully detailed prompt for image generation.
+
+Output: 
+	Generate only a python list with the prompts
+
+
+===========
+
+[
+    "A close-up shot inside a bedroom of an apartment showing a dresser placed against a wall. The dresser is fully visible with its drawers slightly open, and no other objects obstructing the view. The room is well-lit with soft natural light coming through a nearby window. Optional entities like a bag or a drink may be seen near the dresser, but they do not interfere with the dresser's visibility. The perspective emphasizes the dresser from a low angle, ensuring clarity and detail. The robot is to inspect the dresser as per the command.",
+    
+    "A wide shot of a bedroom in an apartment with the dresser clearly in the center of the room. The dresser is placed along a wall with its drawers open, showing some objects inside. There are no other objects cluttering the immediate area around the dresser. The space is large enough to reveal the surroundings, including a bed, a rug, and a lamp. The robot is positioned in the room, ready to inspect the dresser, as requested in the command.",
+    
+    "A long shot of a bedroom taken from the doorway, showing the dresser in the far corner of the room. The dresser stands alone, and the surroundings are spacious with light filtering through the window. Optional items such as a newspaper or a bag may be placed near the dresser, but the focus remains on the dresser itself. The robot is located at a distance, preparing to move towards the dresser to perform the inspection.",
+    
+    "A low-angle shot looking up at the dresser in the bedroom from near the floor, with the dresser towering above. The drawers are slightly open, and the details of the dresser are highlighted by the overhead lighting. The room is quiet and clean, with minimal decoration. There are no objects obstructing the dresser's view. The robot is positioned just beneath the dresser, indicating its task to inspect it as per the command.",
+    
+    "A high-angle shot from above the bedroom, looking down on the dresser placed in the center of the room. The dresser is open and visible from above, with various items inside. The surrounding environment is spacious, with the bed, rug, and other furniture arranged in the room. Optional entities like a handle or bag are visible but do not distract from the dresser. The robot is positioned near the dresser, preparing to carry out the inspection."
+]

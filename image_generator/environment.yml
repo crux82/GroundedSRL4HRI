@@ -1,0 +1,29 @@
+name: visual_grounding
+channels:
+  - pytorch
+  - conda-forge
+  - nvidia
+  - nvidia/label/cuda-12.1.0
+dependencies:
+  - python=3.8
+  - git
+  - wget
+  - zip
+  - gcc_linux-64=9.3.0
+  - gxx_linux-64=9.3.0
+  - nvidia/label/cuda-12.1.0:cuda=12.1.0
+  - pip
+  - pip:
+    - --extra-index-url https://download.pytorch.org/whl/cu121
+    - torch==2.4.1+cu121
+    - torchvision
+    - torchaudio
+    - datasets
+    - scikit-learn
+    - transformers
+    - addict
+    - yapf
+    - timm
+    - opencv-python
+    - supervision>=0.22.0
+    - pycocotools

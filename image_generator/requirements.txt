@@ -1,0 +1,8 @@
+diffusers
+accelerate
+protobuf
+sentencepiece
+supervision==0.21.0
+openpyxl
+openai
+json5

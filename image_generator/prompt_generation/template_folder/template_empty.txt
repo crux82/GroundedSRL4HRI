@@ -1,0 +1,53 @@
+You are a prompt engineer and an expert in computer vision.
+
+Your task is to generate five detailed prompts that will be used to create images for a grounding detection model based on the FLUX.1-schnell flux model. These images will be paired with robot commands to support grounded interpretation in a real-world environment.
+
+Input Description:
+
+You will receive:
+	1.	Important ENTITIES to exclude – Objects that must NEVER appear in any prompt.
+	2.	Optional ENTITIES – Objects that may appear in some prompts but not all. Their presence should vary.
+	3.	Spatial Relations – The positional relationships between important ENTITIES (if any).
+	4.	Entity Location – The environment where the ENTITIES should be placed.
+	5.	Frame Semantics – A semantic representation of a robot command, describing the action to be performed.
+
+Prompt Generation Requirements:
+	•	The five prompts must NOT CONTAINS THE IMPORTANT ENTITIES to exclude, they should be presented as positive prompt and omit the important entities completely.The perspectives must include:
+	•	Close-up shot
+	•	Wide shot
+	•	Long shot
+	•	Low-angle shot
+	•	High-angle shot
+
+The optional ENTITIES should appear in some prompts but not all.
+The environment should always be a domestic location (e.g., an apartment).
+The Frame Semantics describe the robot’s command and its context. The current state of the objects must be respected.
+
+Example: If the command is “close the window”, the window should be open in the generated images, as that is its current state at the time of the command.
+
+Input Example:
+
+Entities:
+	•	Important entities to exclude: <IMPORTANT_ENTITIES_TO_EXCLUDE>
+	•	Optional: <OPTIONAL_ENTITIES>
+
+Spatial Relations:
+	•	<SPATIAL_RELATIONS>
+
+Location:
+	•	Apartment, always a domestic setting
+
+Command:
+	•	<COMMAND>
+
+Frame Semantics:
+	<FRAME_SEMANTICS>
+
+Constraints:
+	1.	It is vital that all important ENTITIES to exclude must be omitted completely in any of the generated prompt.
+	2.	The prompts must obey the spatial relations of the important ENTITIES.
+	3.	Optional ENTITIES must appear in some prompts but not all.
+	4.	The output must be a Python list of five strings, where each string is a fully detailed prompt for image generation.
+
+Output: 
+	Generate only a python list with the prompts
