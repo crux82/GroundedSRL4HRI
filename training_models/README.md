@@ -15,7 +15,7 @@ This repository provides a full pipeline for fine-tuning the [MiniCPM](https://g
 Below is explained how to prepare the dataset, if you want to skip this step you can use the datasets provided in the folders: 
 and go of directly to finetuning the models
 
-### 1️⃣ Convert TSV to MiniCPM Format
+### 1 Convert TSV to MiniCPM Format
 
 Use the script `tsv_to_mincpm_format.py` to convert your dataset to MiniCPM's format and add a system prompt to each example. Make sure to change the input_file and output_file variable within the script as desired
 
@@ -23,7 +23,7 @@ Use the script `tsv_to_mincpm_format.py` to convert your dataset to MiniCPM's fo
 python tsv_to_mincpm_format.py 
 ````
 
-### 2️⃣ (Optional) Create ID Splits for Train/Dev/Test
+### 2 (Optional) Create ID Splits for Train/Dev/Test
 
 You can optionally create ID-based splits using `create_id_split.py`. We provide in the repository the split that we used for our experiments called: id_train.txt, id_dev.txt, id_test.txt
 Make sure to change the input_path variable within the script as desired
@@ -31,14 +31,14 @@ Make sure to change the input_path variable within the script as desired
 python create_id_split.py 
 ```
 
-### 3️⃣ Generate Datasets Based on Splits
+### 3 Generate Datasets Based on Splits
 
 Now use `generate_dataset.py` to create the final datasets for each split using the ids created with previous step. Make sure to change the filename,directory and directory_target variable within the script as desired
 
 ```bash
 python generate_dataset.py
 ```
-
+---
 ## Train the Model
 
 Use the provided `.sh` scripts to start training MiniCPM. Before running, make sure to update:
