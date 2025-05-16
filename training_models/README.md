@@ -7,11 +7,13 @@ This repository provides a full pipeline for fine-tuning the [MiniCPM](https://g
 
 - Install [MiniCPM](https://github.com/OpenBMB/MiniCPM-o) by following the instructions in its official repository.
 - Make sure all required dependencies are installed.
-- Your dataset should be in `.tsv` format, with appropriate input/output columns.
+- Your dataset should be in `.tsv` format, with appropriate input/output columns. Chose your dataset in image_generator/data/dataset
 
 ---
 
-## 📘 Step-by-Step Instructions
+## 📘 Optional: dataset preparation
+Below is explained how to prepare the dataset, if you want to skip this step you can use the datasets provided in the folders: 
+and go of directly to finetuning the models
 
 ### 1️⃣ Convert TSV to MiniCPM Format
 
@@ -37,7 +39,7 @@ Now use `generate_dataset.py` to create the final datasets for each split using 
 python generate_dataset.py
 ```
 
-### 4️⃣ Train the Model
+## Train the Model
 
 Use the provided `.sh` scripts to start training MiniCPM. Before running, make sure to update:
 * DATA
