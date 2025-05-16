@@ -51,5 +51,5 @@ Use the provided `.sh` scripts to start training MiniCPM. Before running, make s
 Example:
 
 ```bash
-bash train_mycpm.sh
+bash finetune_json_top_1.sh
 ```
