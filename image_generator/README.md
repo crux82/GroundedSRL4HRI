@@ -1,9 +1,9 @@
 # Domestic Image Generator
 
-This README provides a high-level overview of the pipeline used to generate the **Silver Dataset** described in the submitted paper.  
+This README provides a high-level overview of the pipeline used to generate the **Automatic Dataset** described in the submitted paper.  
 
 - For general information, refer to the root-level README.  
-- For model training details, refer to `training_models/README.md`.
+- For model training details, refer to [training_models/README.md](training_models/README.md).
 
 ---
 
@@ -23,7 +23,7 @@ Each step in this pipeline is sequential and corresponds to a specific script or
 
 ### Prerequisites
 
-- CUDA-capable GPU  
+- CUDA-capable GPUs  
 - NVIDIA CUDA drivers installed  
 - Ensure that `environment.yml` matches your CUDA version (see lines `6`, `14`, and `18`)
 
@@ -75,6 +75,7 @@ export OPENAI_API_KEY="your-api-key"
 Generate prompts:
 
 ```bash
+cd prompt_generation
 python -u generate_prompts.py
 ```
 
@@ -107,6 +108,7 @@ Use the prompts to generate images using the [FLUX.1-schnell](https://huggingfac
 This step is fully automated and skips already-generated images.
 
 ```bash
+cd ..
 python 2_image_generation.py
 ```
 
@@ -114,7 +116,7 @@ python 2_image_generation.py
 
 ## Step 3: Image Autolabelling
 
-Automatically generate bounding boxes for Existence Constraints using [GroundingDINO](https://github.com/IDEA-Research/Grounded-Segment-Anything.git).
+Automatically generate bounding boxes for Accessibility Constraints using [GroundingDINO](https://github.com/IDEA-Research/Grounded-Segment-Anything.git).
 
 The script loops through images, skipping those already labelled.
 
@@ -126,7 +128,7 @@ python 3_autolabeling.py
 
 ## Step 4: Consistency Checking and Scoring
 
-Use [MiniCPM-V 2.6](https://huggingface.co/openbmb/MiniCPM-V-2_6) to verify **Spatial** and **Status** constraints.  
+Use [MiniCPM-V 2.6](https://huggingface.co/openbmb/MiniCPM-V-2_6) to verify **Spatial** and **Object State** constraints.  
 The script loads HuRIC constraints and queries the Visual LLM, saving all results in a timestamped `.json` file.
 
 ```bash
