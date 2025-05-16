@@ -1,6 +1,4 @@
 
-
-````markdown
 # Fine-Tuning with MiniCPM
 
 This repository provides a full pipeline for fine-tuning the [MiniCPM](https://github.com/OpenBMB/MiniCPM-o) language model on a custom dataset in TSV format. The process includes dataset conversion, optional ID splitting, dataset generation, and training.
@@ -23,8 +21,6 @@ Use the script `tsv_to_mincpm_format.py` to convert your dataset to MiniCPM's fo
 python tsv_to_mincpm_format.py 
 ````
 
----
-
 ### 2️⃣ (Optional) Create ID Splits for Train/Dev/Test
 
 You can optionally create ID-based splits using `create_id_split.py`. We provide in the repository the split that we used for our experiments called: id_train.txt, id_dev.txt, id_test.txt
@@ -32,7 +28,6 @@ Make sure to change the input_path variable within the script as desired
 ```bash
 python create_id_split.py 
 ```
----
 
 ### 3️⃣ Generate Datasets Based on Splits
 
@@ -41,8 +36,6 @@ Now use `generate_dataset.py` to create the final datasets for each split using 
 ```bash
 python generate_dataset.py
 ```
-
----
 
 ### 4️⃣ Train the Model
 
@@ -57,6 +50,4 @@ Example:
 
 ```bash
 bash train_mycpm.sh
-```
-, posso anche aiutarti a scrivere gli script `.sh` o preparare un esempio di dataset `.tsv`. Fammi sapere!
 ```
