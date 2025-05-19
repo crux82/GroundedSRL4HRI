@@ -5,7 +5,7 @@ This repository provides a full pipeline for fine-tuning the [MiniCPM](https://g
 
 ## 🔧 Prerequisites
 
-- Install [MiniCPM](https://github.com/OpenBMB/MiniCPM-o) by following the instructions in its official repository.
+- Install [MiniCPM](https://github.com/OpenBMB/MiniCPM-o) **in this direcotory** by following the instructions in its official repository.
 - Make sure all required dependencies are installed.
 - Your dataset should be in `.tsv` format, with appropriate input/output columns. Chose your dataset in image_generator/data/dataset
 
