@@ -17,7 +17,7 @@ and go of directly to finetuning the models
 
 ### 1 Convert TSV to MiniCPM Format
 
-Use the script `tsv_to_mincpm_format.py` to convert your dataset to MiniCPM's format and add a system prompt to each example. Make sure to change the input_file and output_file variable within the script as desired
+Use the script `tsv_to_mincpm_format.py` to convert your dataset to MiniCPM's format and add a system prompt to each example. Make sure to change the data_name, input_file,directory_image and output_file variable within the script as desired
 
 ```bash
 python tsv_to_mincpm_format.py 
@@ -33,7 +33,7 @@ python create_id_split.py
 
 ### 3 Generate Datasets Based on Splits
 
-Now use `generate_dataset.py` to create the final datasets for each split using the ids created with previous step. Make sure to change the filename,directory and directory_target variable within the script as desired
+Now use `generate_dataset.py` to create the final datasets for each split using the ids created with previous step. Make sure to change the filename, directory and directory_target variable within the script as desired
 
 ```bash
 python generate_splitted_dataset.py
