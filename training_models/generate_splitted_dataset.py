@@ -10,8 +10,8 @@ dev_ids = load_ids("id_dev.txt")
 test_ids = load_ids("id_test.txt")
 
 filename="json_top_1_images"
-directory="./dataset_json/"
-directory_target="./dataset_silver_split/"
+directory="./dataset/top1/complete/"
+directory_target="./dataset/top1/complete/"
 
 with open(directory+filename+".json", "r") as f:
     examples = json.load(f)

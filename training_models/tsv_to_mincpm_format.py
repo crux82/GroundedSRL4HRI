@@ -1,16 +1,20 @@
 import json
-
+import os
 
 # Input path
-input_file = '../image_generator/data/dataset/json_top_1_images.tsv'
-output_file='./dataset_json/json_top_1_images.json'
+data_name="json_top_1_images"
+input_file = '../image_generator/data/dataset/'+data_name+'.tsv'
+directory_image="../image_generator/data/images/"
+output_file='./dataset/top1/complete/'+data_name+'.json'
 
 
 
 def convert_line_to_json(line):
     parts = line.split('\t')
     id_part = parts[0].strip()
-    path = parts[1].strip()
+    filename = os.path.basename(parts[1].strip())
+    path = directory_image+filename
+
     request = parts[2].strip()
     text = parts[3].strip()
     prompt='''You are given a natural language command and a corresponding image depicting a domestic environment. Your task is to convert the command into a **structured, grounded semantic representation** in the form of **predicate-argument structures**.

@@ -7,8 +7,8 @@ MASTER_ADDR=localhost
 MASTER_PORT=6002
 
 MODEL="openbmb/MiniCPM-V-2_6" 
-DATA="./dataset_silver_split/json_top_1_images_train.json"
-EVAL_DATA="./dataset_silver_split/json_top_1_images_dev.json"
+DATA="./dataset/top1/complete/json_top_1_images_train.json"
+EVAL_DATA="./dataset/top1/complete/json_top_1_images_dev.json"
 LLM_TYPE="qwen2" 
 
 MODEL_MAX_Length=4096   
@@ -20,7 +20,7 @@ DISTRIBUTED_ARGS="
     --master_addr $MASTER_ADDR \
     --master_port $MASTER_PORT
 "
-torchrun $DISTRIBUTED_ARGS ./MiniCPM-V/finetune/finetune.py  \
+torchrun $DISTRIBUTED_ARGS ./MiniCPM-o/finetune/finetune.py  \
     --model_name_or_path $MODEL \
     --llm_type $LLM_TYPE \
     --data_path $DATA \
@@ -59,5 +59,5 @@ torchrun $DISTRIBUTED_ARGS ./MiniCPM-V/finetune/finetune.py  \
     --lr_scheduler_type "cosine" \
     --logging_steps 1 \
     --gradient_checkpointing true \
-    --deepspeed ./MiniCPM-V/finetune/ds_config_zero3.json \
+    --deepspeed ./MiniCPM-o/finetune/ds_config_zero3.json \
     --report_to "tensorboard" # wandb
