@@ -47,6 +47,7 @@ Use the provided `.sh` scripts to start training MiniCPM. Before running, make s
 * finetune.py path
 * `save_step` depending on the number of examples
 * GPU configuration based on your hardware
+* deepspeed config path
 
 Example:
 
