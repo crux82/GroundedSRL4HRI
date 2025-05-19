@@ -1,7 +1,7 @@
 import random
 
 random.seed(42)
-input_path="./dataset/text_top_1_images.tsv"
+input_path="../image_generator/data/dataset/text_top_1_images.tsv"
 
 with open(input_path, "r") as f:
     lines = f.readlines()

@@ -2,8 +2,8 @@ import json
 
 
 # Input path
-input_file = 'json_top_1_images.tsv'
-output_file='json_top_1_images.json'
+input_file = '../image_generator/data/dataset/json_top_1_images.tsv'
+output_file='./dataset_json/json_top_1_images.json'
 
 
 
