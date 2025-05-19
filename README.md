@@ -2,7 +2,9 @@
 
 *Grounded Semantic Role Labeling from Synthetic Multimodal Data for Situated Robot Commands*
 
-This project introduces multimodal models for grounded semantic role labeling and the generation of synthetic domestic images. The generated dataset is conditioned on linguistic and environmental constraints extracted from the [HuRIC](https://github.com/crux82/huric) dataset, enabling experiments in **Situated Human-Robot Interaction (HRI)**.
+This repository is an accompaniment to the article with id `dmHxIYyUSc` submitted at EMNLP2025.
+
+The project introduces multimodal models for grounded semantic role labeling and the generation of synthetic domestic images. The generated dataset is conditioned on linguistic and environmental constraints extracted from the [HuRIC](https://github.com/crux82/huric) dataset, enabling experiments in **Situated Human-Robot Interaction (HRI)**.
 
 ---
 
