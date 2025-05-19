@@ -36,7 +36,7 @@ python create_id_split.py
 Now use `generate_dataset.py` to create the final datasets for each split using the ids created with previous step. Make sure to change the filename,directory and directory_target variable within the script as desired
 
 ```bash
-python generate_dataset.py
+python generate_splitted_dataset.py
 ```
 ---
 ## Train the Model
