@@ -59,16 +59,16 @@ bash finetune_json_top_1.sh
 
 To evaluate the fine-tuned model, follow these steps:
 
-1. Use the `test.py` script to run inference with the trained model and generate the CSV file required for evaluation.  
+1. Use the `test.py` script to run inference with the trained model and generate the CSV file required for evaluation. Make sure to change the model_type and outputfile variable within the script as desired
    Run the following command:
    ```bash
-   python test.py```
+   python test.py --model_type "./models/json_top_1/checkpoint-X"  --dataset_path "./dataset_silver_split/json_top_1_images_test.json" --outputfile "TEST_json_top1.csv"
+   ```
 
-2. Use the `evaluate_interpretations.py` script to compute all the relevant evaluation metrics for the model.
+2. Use the `evaluate_interpretations.py` script to compute all the relevant evaluation metrics for the model. Make sure to change the input and output variable within the script as desired
    Run the following command:
-
    ```bash
-   python evaluate_interpretations.py
+   python -u evaluate_interpretations.py --input "TEST_json_top1.csv" --output "TEST_json_top1_results.txt" 
    ```
 
 
