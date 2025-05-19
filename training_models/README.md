@@ -54,3 +54,5 @@ Example:
 ```bash
 bash finetune_json_top_1.sh
 ```
+
+## Eval the Model
