@@ -55,4 +55,22 @@ Example:
 bash finetune_json_top_1.sh
 ```
 
-## Eval the Model
+## 🧪 Model Evaluation
+
+To evaluate the fine-tuned model, follow these steps:
+
+1. Use the `test.py` script to run inference with the trained model and generate the CSV file required for evaluation.  
+   Run the following command:
+   ```bash
+   python test.py
+````
+
+2. Use the `evaluate_interpretations.py` script to compute all the relevant evaluation metrics for the model.
+   Run the following command:
+
+   ```bash
+   python evaluate_interpretations.py
+   ```
+```
+
+
