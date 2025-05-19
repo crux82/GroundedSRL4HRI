@@ -5,7 +5,6 @@ prompt_generation/**/
 !prompt_generation/template_folder/
 *old.txt
 *.xlsx
-*.png
 *.jpg
 *.zip
 *.csv
