@@ -39,7 +39,7 @@ Now use `generate_dataset.py` to create the final datasets for each split using 
 python generate_splitted_dataset.py
 ```
 ---
-## Train the Model
+## ⚙️ Train the Model
 
 Use the provided `.sh` scripts to start training MiniCPM. Before running, make sure to update:
 * DATA
@@ -62,8 +62,7 @@ To evaluate the fine-tuned model, follow these steps:
 1. Use the `test.py` script to run inference with the trained model and generate the CSV file required for evaluation.  
    Run the following command:
    ```bash
-   python test.py
-````
+   python test.py```
 
 2. Use the `evaluate_interpretations.py` script to compute all the relevant evaluation metrics for the model.
    Run the following command:
@@ -71,6 +70,6 @@ To evaluate the fine-tuned model, follow these steps:
    ```bash
    python evaluate_interpretations.py
    ```
-```
+
 
 
