@@ -2,9 +2,9 @@
 
 *Grounded Semantic Role Labeling from Synthetic Multimodal Data for Situated Robot Commands*
 
-This repository is an accompaniment to the article with id `dmHxIYyUSc` submitted at EMNLP2025.
-
 The project introduces multimodal models for grounded semantic role labeling and the generation of synthetic domestic images. The generated dataset is conditioned on linguistic and environmental constraints extracted from the [HuRIC](https://github.com/crux82/huric) dataset, enabling experiments in **Situated Human-Robot Interaction (HRI)**.
+
+The paper has been accepted to EMNLP 2025 and can be accessed [here](https://aclanthology.org/2025.emnlp-main.1212/).
 
 ---
 
@@ -78,3 +78,25 @@ Please refer to the subfolder READMEs for detailed instructions on each componen
 
 ---
 
+# Citation
+```
+@inproceedings{hromei-etal-2025-grounded,
+    title = "Grounded Semantic Role Labelling from Synthetic Multimodal Data for Situated Robot Commands",
+    author = "Hromei, Claudiu Daniel  and
+      Scaiella, Antonio  and
+      Croce, Danilo  and
+      Basili, Roberto",
+    editor = "Christodoulopoulos, Christos  and
+      Chakraborty, Tanmoy  and
+      Rose, Carolyn  and
+      Peng, Violet",
+    booktitle = "Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing",
+    month = nov,
+    year = "2025",
+    address = "Suzhou, China",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2025.emnlp-main.1212/",
+    pages = "23758--23781",
+    ISBN = "979-8-89176-332-6",
+}
+```
